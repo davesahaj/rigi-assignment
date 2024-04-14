@@ -1,18 +1,31 @@
-import { Member } from '@/components/common'
-import { Text } from '@/components/core'
+import { useQuery } from '@tanstack/react-query';
+
+import { Member } from '@/components/common';
+import { Text } from '@/components/core';
+
+import { getAllUsers } from '../../utils/api';
+
+import { Skeleton } from './skeleton';
 
 export const MemberList = () => {
-    return (
-        <div className="space-y-4 border dark:border-emerald-500 p-3 bg-white dark:bg-gray-800 rounded-xl w-min min-w-[320px]">
-            <Text className='' type='subheading'>Members</Text>
-            <div className="flex flex-col gap-y-3">
-                <Member name="Sahaj Dave" />
-                <Member name="Aparna pandey" />
-                <Member name="Leo Dave" />
-                <Member name="Kitty Dave" />
-                <Member name="Pranay Pandey" />
-                <Member name="Nandkishor Kulkarni" />
-            </div>
-        </div>
-    )
-}
+  const usersList = useQuery({ queryKey: ['usersList'], queryFn: getAllUsers });
+
+  return (
+    <div className="w-min min-w-[320px] space-y-4 rounded-xl border bg-white p-3 dark:border-emerald-500 dark:bg-gray-800">
+      <Text className="" type="subheading">
+        Members
+      </Text>
+      <div className="flex flex-col gap-y-3">
+        {usersList.isSuccess && Array.isArray(usersList.data) ? (
+          usersList.data.map(({ id, name, profilePictureUrl }) => (
+            <Member key={id} name={name} image={profilePictureUrl} />
+          ))
+        ) : (
+          <>
+            <Skeleton />
+          </>
+        )}
+      </div>
+    </div>
+  );
+};

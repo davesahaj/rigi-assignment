@@ -17,7 +17,7 @@ export const PostPage = () => {
   return (
     <div className="flex h-full w-full flex-nowrap">
       <div className="min-w-[30%]" />
-      <div className="min-w-[40%] space-y-8 overflow-scroll border-x bg-white px-12 py-6 dark:bg-gray-800">
+      <div className="min-w-[40%] space-y-8 overflow-auto border-x bg-white px-12 py-6 dark:bg-gray-800">
         <IconButton onClick={goBack}>{ArrowLeftIcon}</IconButton>
         <Post />
       </div>
