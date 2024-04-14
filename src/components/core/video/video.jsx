@@ -9,7 +9,7 @@ export const SkeletonVideo = () => {
 export const Video = ({ src, className, ...otherProps }) => {
   return (
     <video
-      className={`rounded-xl border border-slate-200 object-cover dark:border-slate-800 ${className}`}
+      className={`rounded-xl border border-slate-200 object-cover dark:border-slate-700 ${className}`}
       {...otherProps}
     >
       <source src={src} type="video/mp4" />

@@ -25,7 +25,7 @@ export const SkeletonPost = ({ multiAttachments }) => {
 
 export const Post = ({ image, name, description, attachments }) => {
   return (
-    <div className="flex cursor-pointer gap-x-2  rounded-xl border px-8 py-6 transition-shadow duration-200 hover:shadow-lg dark:border-emerald-500 dark:bg-gray-800 dark:shadow-none">
+    <div className="flex cursor-pointer gap-x-2  rounded-xl border px-8 py-6 transition-all duration-200 hover:shadow-lg dark:border-emerald-500 dark:bg-gray-800 dark:shadow-none dark:hover:border-emerald-300">
       <ProfilePic size="lg" src={image} />
       <div className="space-y-2">
         <Text type="subheading">{name}</Text>
