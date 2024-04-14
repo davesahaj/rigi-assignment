@@ -3,6 +3,11 @@ export default {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      urbanist: ['Urbanist', 'sans-serif'],
+      lato: ['Lato', 'sans-serif']
+    },
+
     extend: {
       colors: {
         border: 'hsl(var(--border))',
