@@ -2,7 +2,7 @@ import { Post } from '@/components/common';
 
 import { MemberList } from './components/member-list/member-list';
 
-export const Feed = () => {
+export const FeedPage = () => {
   return (
     <div className="flex h-full w-full flex-nowrap">
       <div className="min-w-[30%]" />
