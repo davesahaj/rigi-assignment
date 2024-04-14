@@ -1,13 +1,12 @@
-import { SkeletonProfilePic } from '@/components/core';
+import { SkeletonPost } from '@/components/common';
 
 export const Skeleton = () => {
   return (
     <>
-      <SkeletonProfilePic />
-      <SkeletonProfilePic />
-      <SkeletonProfilePic />
-      <SkeletonProfilePic />
-      <SkeletonProfilePic />
+      <SkeletonPost />
+      <SkeletonPost multiAttachments />
+      <SkeletonPost />
+      <SkeletonPost multiAttachments />
     </>
   );
 };

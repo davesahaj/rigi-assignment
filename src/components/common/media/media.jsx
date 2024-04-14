@@ -1,9 +1,11 @@
-import { Image, Video } from '@/components/core';
+import { Image, SkeletonVideo, Video } from '@/components/core';
 
-export const Media = ({ type, ...otherProps }) => {
+export const Media = ({ type, src, ...otherProps }) => {
   return type === 'image' ? (
-    <Image {...otherProps} />
+    <Image src={src} {...otherProps} />
+  ) : src ? (
+    <Video src={src} {...otherProps} />
   ) : (
-    <Video {...otherProps} />
+    <SkeletonVideo />
   );
 };

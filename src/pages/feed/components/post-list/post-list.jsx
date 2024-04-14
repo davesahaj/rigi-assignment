@@ -224,13 +224,16 @@ export const PostList = () => {
   return (
     <>
       {data.map(({ id, author, text, attachments }) => (
-        <Post
-          image={author.profilePictureUrl}
-          key={id}
-          name={author.name}
-          description={text}
-          attachments={attachments}
-        />
+        <>
+          <Skeleton key={id} />
+          <Post
+            image={author.profilePictureUrl}
+            key={id}
+            name={author.name}
+            description={text}
+            attachments={attachments}
+          />
+        </>
       ))}
     </>
   );

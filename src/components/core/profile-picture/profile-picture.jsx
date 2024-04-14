@@ -32,7 +32,7 @@ export const ProfilePic = ({
   return (
     <img
       src={src}
-      className={`overflow-hidden rounded-full border ${pictureSizes[size]} ${className}`}
+      className={`overflow-hidden rounded-full border dark:border-slate-500 ${pictureSizes[size]} ${className}`}
     />
   );
 };
