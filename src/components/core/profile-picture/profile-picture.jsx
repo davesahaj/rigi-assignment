@@ -5,7 +5,7 @@ const pictureSizes = {
 };
 
 export const ProfilePic = ({
-  src = 'user.svg',
+  src = '/user.svg',
   size = 'md',
   className = ''
 }) => {
