@@ -5,6 +5,10 @@ const textStyles = {
   thin: 'text-base font-thin'
 };
 
-export const Text = ({ children, type = textStyles.regular, className }) => {
-  return <div className={`${textStyles[type]} ${className}`}>{children}</div>;
+export const Text = ({ children, type = 'regular', className }) => {
+  return (
+    <div className={`${textStyles[type]} ${className ? className : ''}`}>
+      {children}
+    </div>
+  );
 };
