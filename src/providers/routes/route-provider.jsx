@@ -9,7 +9,7 @@ import {
 import { Header } from '@/components/common/header';
 import { MainLayout } from '@/components/layout/';
 import { ROUTES } from '@/constants';
-import { Feed } from '@/pages';
+import { Feed, Post } from '@/pages';
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -25,12 +25,16 @@ const rootRoute = createRootRoute({
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: ROUTES.HOME,
-  component: function () {
-    return <Feed />;
-  }
+  component: Feed
 });
 
-const routeTree = rootRoute.addChildren([indexRoute]);
+export const postRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.POST,
+  component: Post
+});
+
+const routeTree = rootRoute.addChildren([indexRoute, postRoute]);
 
 const router = createRouter({ routeTree });
 

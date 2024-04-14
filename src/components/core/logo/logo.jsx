@@ -1,3 +1,3 @@
 export const Logo = ({ className }) => {
-    return <img src="logo.svg" className={`w-[160px] h-auto ${className}`} />
-}
+  return <img src="/logo.svg" className={`h-auto w-[160px] ${className}`} />;
+};

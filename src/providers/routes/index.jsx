@@ -1,1 +1,1 @@
-export * from './route-provider'
+export * from './route-provider';
