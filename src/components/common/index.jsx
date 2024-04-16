@@ -3,3 +3,4 @@ export * from './member';
 export * from './media';
 export * from './post';
 export * from './search-input';
+export * from './search-container';

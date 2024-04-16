@@ -42,21 +42,23 @@ export const Post = ({
 
   return (
     <div
-      className={`flex cursor-pointer gap-x-2  rounded-xl border px-8 py-6 transition-all duration-200 hover:border-emerald-500 dark:border-emerald-500 dark:bg-gray-800 dark:shadow-none dark:hover:border-emerald-300 ${isPostPage ? 'border-emerald-500' : ''}`}
+      className={`flex cursor-pointer gap-x-2  rounded-xl border px-2 py-3 transition-all duration-200 hover:border-emerald-500 dark:border-emerald-500 dark:bg-gray-800 dark:shadow-none dark:hover:border-emerald-300 lg:px-8 lg:py-6 ${isPostPage ? 'border-emerald-500' : ''}`}
       {...otherProps}
     >
       <ProfilePic size="lg" src={image} />
       <div className="w-full space-y-2">
         <Text type="subheading">{name}</Text>
         <Text>{description}</Text>
-        <div className="flex flex-row flex-wrap gap-3">
+        <div className="flex flex-col flex-wrap gap-3 lg:flex-row">
           {attachments.map(({ id, type, url }) => (
             <Media
               key={id}
               type={type}
               src={url}
               className={
-                attachments.length > 1 ? 'w-[calc(50%_-_6px)]' : 'w-full'
+                attachments.length > 1
+                  ? 'w-full xl:w-[calc(50%_-_6px)]'
+                  : 'w-full'
               }
             />
           ))}

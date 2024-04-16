@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { useNavigate } from '@tanstack/react-router';
+import { Link, useNavigate } from '@tanstack/react-router';
 import { useVirtualizer } from '@tanstack/react-virtual';
 
 import { Post } from '@/components/common';
@@ -67,10 +67,10 @@ export const PostList = () => {
             const { id, author, text, attachments } =
               listItems[virtualItem.index];
             return (
-              <div
+              <Link
                 key={id}
                 onClick={() => navigateToPost(id)}
-                className="absolute left-0 top-0 box-border w-full overflow-hidden px-4 pt-4"
+                className="absolute left-0 top-0 box-border w-full overflow-hidden pt-4 lg:px-4"
                 ref={virtualItem.measureRef}
                 style={{
                   height: `${virtualItem.size}px`,
@@ -85,7 +85,7 @@ export const PostList = () => {
                   attachments={attachments}
                   style={{ height: '100%' }}
                 />
-              </div>
+              </Link>
             );
           })
         ) : (

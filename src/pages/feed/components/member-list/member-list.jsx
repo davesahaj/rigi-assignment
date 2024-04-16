@@ -11,7 +11,7 @@ export const MemberList = () => {
   const usersList = useQuery({ queryKey: ['usersList'], queryFn: getAllUsers });
 
   return (
-    <div className="w-min min-w-[320px] space-y-4 rounded-xl border bg-white p-3 dark:border-emerald-500 dark:bg-gray-800">
+    <div className="mx-auto w-max min-w-[320px] space-y-4 rounded-xl border bg-white p-3 dark:border-emerald-500 dark:bg-gray-800 lg:w-min">
       <Text className="" type="subheading">
         Members
       </Text>

@@ -6,7 +6,6 @@ import {
   RouterProvider as NativeRouterProvider
 } from '@tanstack/react-router';
 
-import { Header } from '@/components/common/header';
 import { MainLayout } from '@/components/layout/';
 import { ROUTES } from '@/constants';
 import { FeedPage, PostPage } from '@/pages';
@@ -14,7 +13,6 @@ import { FeedPage, PostPage } from '@/pages';
 const rootRoute = createRootRoute({
   component: () => (
     <>
-      <Header />
       <MainLayout>
         <Outlet />
       </MainLayout>
