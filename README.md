@@ -6,7 +6,14 @@ A virtualized feed that efficiently renders different types of posts (images, te
 
 https://rigi.sahajdave.com
 
-### Features
+### Images:
+<img align="left"  src="https://github.com/davesahaj/rigi-assignment/assets/20627503/057d01b7-2a86-446a-acfb-0cbad6861335" width="500"/>
+<img align="left" src="https://github.com/davesahaj/rigi-assignment/assets/20627503/ce5fba54-739c-4342-8649-80da58534f52" width="480"/>
+
+
+
+
+### Features:
 
 - ✅ Best Coding Practices
 	- Scaleable and maintainable directory structure
@@ -33,7 +40,7 @@ https://rigi.sahajdave.com
 - ❌ Infinite Scroll
 	- Didn't get time to implement 'load more' feature.
 
-### Ships with just six dependencies
+### Ships with just six dependencies:
 - React + React DOM
 - Radix Icons
 - Tanstack
