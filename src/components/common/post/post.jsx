@@ -1,3 +1,6 @@
+import { useMemo } from 'react';
+import { useRouterState } from '@tanstack/react-router';
+
 import { Media } from '@/components/common';
 import { ProfilePic, SkeletonProfilePic, Text } from '@/components/core';
 
@@ -30,9 +33,16 @@ export const Post = ({
   attachments,
   ...otherProps
 }) => {
+  const router = useRouterState();
+
+  const isPostPage = useMemo(
+    () => router.location.pathname.includes('/post'),
+    [router?.location?.pathname]
+  );
+
   return (
     <div
-      className="flex cursor-pointer gap-x-2  rounded-xl border px-8 py-6 transition-all duration-200 hover:shadow-lg dark:border-emerald-500 dark:bg-gray-800 dark:shadow-none dark:hover:border-emerald-300"
+      className={`flex cursor-pointer gap-x-2  rounded-xl border px-8 py-6 transition-all duration-200 hover:border-emerald-500 dark:border-emerald-500 dark:bg-gray-800 dark:shadow-none dark:hover:border-emerald-300 ${isPostPage ? 'border-emerald-500' : ''}`}
       {...otherProps}
     >
       <ProfilePic size="lg" src={image} />

@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { useNavigate } from '@tanstack/react-router';
 import { useVirtualizer } from '@tanstack/react-virtual';
 
 import { Post } from '@/components/common';
-
-import { getAllPosts } from '../../utils/api';
+import { ROUTES } from '@/constants';
+import { getAllPosts } from '@/pages/feed/utils/api';
 
 import { Skeleton } from './skeleton';
 export const PostList = () => {
@@ -12,6 +13,7 @@ export const PostList = () => {
   const [listItems, setListItems] = useState([]);
 
   const postsList = useQuery({ queryKey: ['postsList'], queryFn: getAllPosts });
+  const navigate = useNavigate();
 
   const getItemHeight = useCallback(
     index => {
@@ -30,6 +32,11 @@ export const PostList = () => {
       }
     },
     [listItems]
+  );
+
+  const navigateToPost = useCallback(
+    id => navigate({ to: ROUTES.POST.replace('$id', id) }),
+    [navigate]
   );
 
   const virtualizer = useVirtualizer({
@@ -62,7 +69,8 @@ export const PostList = () => {
             return (
               <div
                 key={id}
-                className="absolute left-0 top-0 box-border w-full overflow-hidden pt-4"
+                onClick={() => navigateToPost(id)}
+                className="absolute left-0 top-0 box-border w-full overflow-hidden px-4 pt-4"
                 ref={virtualItem.measureRef}
                 style={{
                   height: `${virtualItem.size}px`,
