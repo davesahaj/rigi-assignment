@@ -24,8 +24,9 @@ https://rigi.sahajdave.com
 	- Used react memoisations to improve performance
 	- Used Tanstack Query to cache API calls
 	- Debounced inputs for reduce hits
-- ✅ Rulesets and Coding guidelines
+- ✅ Rulesets and guidelines
 	- Eslint and prettier rulesets to maintain consistency among developers
+   	- Sensitive information is stored in ENV files
 - ✅ Accessible Components
 	- Virtually all components respect aria-standards and accessibility
 - ✅ Multi Theme Support
