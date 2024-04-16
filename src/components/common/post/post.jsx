@@ -42,7 +42,7 @@ export const Post = ({
 
   return (
     <div
-      className={`flex cursor-pointer gap-x-2  rounded-xl border px-2 py-3 transition-all duration-200 hover:border-emerald-500 dark:border-emerald-500 dark:bg-gray-800 dark:shadow-none dark:hover:border-emerald-300 lg:px-8 lg:py-6 ${isPostPage ? 'border-emerald-500' : ''}`}
+      className={`flex gap-x-2  rounded-xl border px-2 py-3 transition-all duration-200 hover:border-emerald-500 dark:border-emerald-500 dark:bg-gray-800 dark:shadow-none dark:hover:border-emerald-300 lg:px-8 lg:py-6 ${isPostPage ? 'border-emerald-500' : 'cursor-pointer '}`}
       {...otherProps}
     >
       <ProfilePic size="lg" src={image} />

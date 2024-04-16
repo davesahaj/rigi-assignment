@@ -8,7 +8,7 @@ const Header = () => {
       <div className="relative flex h-full w-full flex-wrap items-center justify-center space-y-2 lg:flex-nowrap lg:items-center lg:justify-between">
         <Logo className="min-w-[160px]" />
         <SearchInput />
-        <div className="">
+        <div className="min-w-[160px]">
           <ToggleTheme />
         </div>
       </div>
