@@ -1,5 +1,6 @@
 import { Header } from '@/components/common';
 
+/*----------  Component  ----------*/
 export const MainLayout = ({ children }) => {
   return (
     <div>

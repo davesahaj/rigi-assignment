@@ -2,6 +2,7 @@
 const API_URL = import.meta.env.VITE_API_URL;
 const API_KEY = import.meta.env.VITE_API_KEY;
 
+/*----------  Core API Call Handler  ----------*/
 async function makeRequest(url, options) {
   try {
     const response = await fetch(url, options);

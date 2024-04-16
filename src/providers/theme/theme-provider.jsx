@@ -13,9 +13,14 @@ export function ThemeProvider({
   storageKey = 'vite-ui-theme',
   ...props
 }) {
+  /*----------  States  ----------*/
+
+  /*----------  Theme Object - gets value from local storage or params  ----------*/
   const [theme, setTheme] = useState(
     () => localStorage.getItem(storageKey) || defaultTheme
   );
+
+  /*----------  Effects ----------*/
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -49,6 +54,8 @@ export function ThemeProvider({
     </ThemeProviderContext.Provider>
   );
 }
+
+/*----------  Custom hook as Global theme modifier  ----------*/
 
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);

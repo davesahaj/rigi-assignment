@@ -10,6 +10,8 @@ import { postRoute } from '@/providers/';
 import { getPost } from './utils/api';
 
 export const PostPage = () => {
+  /*----------  Hooks  ----------*/
+
   const { id } = postRoute.useParams();
   const { history } = useRouter();
 
@@ -18,11 +20,12 @@ export const PostPage = () => {
     queryFn: () => getPost(id)
   });
 
-  console.log(postData.data);
-
+  /*----------  Functions  ----------*/
   const goBack = useCallback(() => {
     history.go(-1);
   }, [history]);
+
+  /*----------  Component  ----------*/
 
   return (
     <div className="flex h-full w-full flex-nowrap">

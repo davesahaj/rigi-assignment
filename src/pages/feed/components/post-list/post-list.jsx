@@ -9,11 +9,15 @@ import { getAllPosts } from '@/pages/feed/utils/api';
 
 import { Skeleton } from './skeleton';
 export const PostList = () => {
+  /*----------  Hooks  ----------*/
+
   const parentRef = useRef(null);
+  const navigate = useNavigate();
+  const postsList = useQuery({ queryKey: ['postsList'], queryFn: getAllPosts });
+
   const [listItems, setListItems] = useState([]);
 
-  const postsList = useQuery({ queryKey: ['postsList'], queryFn: getAllPosts });
-  const navigate = useNavigate();
+  /*----------  Functions  ----------*/
 
   const getItemHeight = useCallback(
     index => {
@@ -33,6 +37,7 @@ export const PostList = () => {
     },
     [listItems]
   );
+  /*--------------------*/
 
   const navigateToPost = useCallback(
     id => navigate({ to: ROUTES.POST.replace('$id', id) }),
@@ -48,11 +53,15 @@ export const PostList = () => {
 
   const virtualItems = virtualizer.getVirtualItems();
 
+  /*----------  Effects  ----------*/
+
   useEffect(() => {
     if (Array.isArray(postsList?.data?.data)) {
       setListItems(postsList.data.data);
     }
   }, [postsList?.data?.data]);
+
+  /*----------  Component  ----------*/
 
   return (
     <div ref={parentRef} className="h-full overflow-auto">

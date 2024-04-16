@@ -10,6 +10,8 @@ import { MainLayout } from '@/components/layout/';
 import { ROUTES } from '@/constants';
 import { FeedPage, PostPage } from '@/pages';
 
+/*----------  Routes  ----------*/
+
 const rootRoute = createRootRoute({
   component: () => (
     <>
@@ -35,6 +37,8 @@ export const postRoute = createRoute({
 const routeTree = rootRoute.addChildren([indexRoute, postRoute]);
 
 const router = createRouter({ routeTree });
+
+/*----------  Global Routes Provider ----------*/
 
 export const RouterProvider = () => {
   return <NativeRouterProvider router={router} />;

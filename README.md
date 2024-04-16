@@ -23,6 +23,7 @@ https://rigi.sahajdave.com
 - ✅ Performance Optimizations
 	- Used react memoisations to improve performance
 	- Used Tanstack Query to cache API calls
+	- Lazy Loading and Skeleton Screens
 	- Debounced inputs for reduce hits
 - ✅ Rulesets and guidelines
 	- Eslint and prettier rulesets to maintain consistency among developers
